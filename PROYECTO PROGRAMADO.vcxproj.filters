@@ -18,9 +18,21 @@
     <ClInclude Include="avion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FECHA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Persona.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FECHA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Persona.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

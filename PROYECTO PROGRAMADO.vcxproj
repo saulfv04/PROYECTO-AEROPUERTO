@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -128,13 +128,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="avion.h" />
+    <ClInclude Include="Azafata.h" />
+    <ClInclude Include="Contrato.h" />
+    <ClInclude Include="Copiloto.h" />
     <ClInclude Include="FECHA.h" />
-    <ClInclude Include="Persona.h" />
+    <ClInclude Include="Empleado.h" />
+    <ClInclude Include="Piloto.h" />
+    <ClInclude Include="Tripulantes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avion.cpp" />
+    <ClCompile Include="Azafata.cpp" />
+    <ClCompile Include="Contrato.cpp" />
+    <ClCompile Include="Copiloto.cpp" />
     <ClCompile Include="FECHA.cpp" />
-    <ClCompile Include="Persona.cpp" />
+    <ClCompile Include="Empleado.cpp" />
+    <ClCompile Include="Piloto.cpp" />
+    <ClCompile Include="Tripulantes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

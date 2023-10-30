@@ -21,7 +21,22 @@
     <ClInclude Include="FECHA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Persona.h">
+    <ClInclude Include="Empleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Contrato.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tripulantes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piloto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Copiloto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Azafata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +47,22 @@
     <ClCompile Include="FECHA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Persona.cpp">
+    <ClCompile Include="Empleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Contrato.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tripulantes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Piloto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Copiloto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Azafata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

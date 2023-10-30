@@ -5,7 +5,7 @@
 
 
 using namespace std;
-class Persona
+class Empleado
 {
 	protected:
 		string cedula;
@@ -13,8 +13,8 @@ class Persona
 		int edad;
 		string ocupacion;
 	public:
-		Persona(string, string, int, string);
-		virtual ~Persona();
+		Empleado(string, string, int, string);
+		virtual ~Empleado();
 		
 		void setCedula(string);
 		void setNombre(string);

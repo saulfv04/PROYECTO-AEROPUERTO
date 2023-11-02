@@ -39,6 +39,27 @@
     <ClInclude Include="Azafata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="aCivil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aCarga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aComerciales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="aMilitar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tipoAvionMilitar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tipoAvionComercial.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tipoAvionCarga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avion.cpp">
@@ -63,6 +84,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Azafata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCivil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aCarga.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aComerciales.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="aMilitar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tipoAvionMilitar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tipoAvionComercial.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tipoAvionCarga.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

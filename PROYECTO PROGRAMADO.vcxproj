@@ -127,6 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="aCarga.h" />
+    <ClInclude Include="aCivil.h" />
+    <ClInclude Include="aComerciales.h" />
+    <ClInclude Include="aMilitar.h" />
     <ClInclude Include="avion.h" />
     <ClInclude Include="Azafata.h" />
     <ClInclude Include="Contrato.h" />
@@ -134,9 +138,16 @@
     <ClInclude Include="FECHA.h" />
     <ClInclude Include="Empleado.h" />
     <ClInclude Include="Piloto.h" />
+    <ClInclude Include="tipoAvionCarga.h" />
+    <ClInclude Include="tipoAvionComercial.h" />
+    <ClInclude Include="tipoAvionMilitar.h" />
     <ClInclude Include="Tripulantes.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="aCarga.cpp" />
+    <ClCompile Include="aCivil.cpp" />
+    <ClCompile Include="aComerciales.cpp" />
+    <ClCompile Include="aMilitar.cpp" />
     <ClCompile Include="avion.cpp" />
     <ClCompile Include="Azafata.cpp" />
     <ClCompile Include="Contrato.cpp" />
@@ -144,6 +155,9 @@
     <ClCompile Include="FECHA.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
+    <ClCompile Include="tipoAvionCarga.cpp" />
+    <ClCompile Include="tipoAvionComercial.cpp" />
+    <ClCompile Include="tipoAvionMilitar.cpp" />
     <ClCompile Include="Tripulantes.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

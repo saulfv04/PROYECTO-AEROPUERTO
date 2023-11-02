@@ -1,6 +1,6 @@
 #include "Azafata.h"
 
-Azafata::Azafata(string c, string n, int e, string o, avion* a, string na) :Tripulantes(c, n, e, o), nacionalidad(na) {}
+Azafata::Azafata(string c, string n, int e, string o, avion* a, string na) :Tripulantes(c, n, e, o,a), nacionalidad(na) {}
 
 Azafata::~Azafata()
 {}

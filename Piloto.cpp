@@ -1,6 +1,9 @@
 #include "Piloto.h"
 
-Piloto::Piloto(string c, string n, int e, string o, avion* a , int aE): Tripulantes(c,n,e,o,a), aniosExp(aE){}
+Piloto::Piloto(string c, string n, int e, string o, avion* a , int aE): Tripulantes()
+{
+
+}
 
 Piloto::~Piloto()
 {

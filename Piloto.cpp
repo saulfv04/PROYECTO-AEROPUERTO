@@ -1,25 +1,18 @@
 #include "Piloto.h"
 
-Piloto::Piloto(string c, string n, int e, string o, avion* a , int aE): Tripulantes()
-{
+Piloto::Piloto(string c, string n, int e, string o,Contrato* cont ,avion* a, int aE) : Tripulantes(c, n, e, o,cont , a),aniosExp(aE){}
 
-}
+Piloto::~Piloto(){}
 
-Piloto::~Piloto()
+void Piloto::setAniosExp(int aE)
 {
-}
-
-void Piloto::setAniosExp(int)
-{
+	this->aniosExp = aE;
 }
 
 int Piloto::getAniosExp()
 {
-	return 0;
+	return aniosExp;
 }
 
-bool Piloto::revisaAvion()
-{
-	return false;
-}
+
 

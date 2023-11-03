@@ -1,16 +1,16 @@
 #include "Azafata.h"
 
-Azafata::Azafata(string c, string n, int e, string o, avion* a, string na) :Tripulantes(c, n, e, o,a), nacionalidad(na) {}
+Azafata::Azafata(string c, string n, int e, string o,Contrato* cont, avion* a, string t):Tripulantes(c,n,e,o,cont,a), telefono(t) {}
 
 Azafata::~Azafata()
 {}
 
-void Azafata::setNacionalidad(string na)
+void Azafata::setTelefono(string t)
 {
-	nacionalidad = na;
+	telefono = t;
 }
 
-string Azafata::getNacionalidad()
+string Azafata::getTelefono()
 {
-	return nacionalidad;
+	return telefono;
 }

@@ -5,14 +5,14 @@ class Piloto : public Tripulantes
 	private:
 		int aniosExp;
 	public:
-		Piloto(string, string, int, string, avion*, int);
+		Piloto(string, string, int, string,Contrato*, avion*, int);
 		virtual ~Piloto();
 
 		void setAniosExp(int);
 
 		int getAniosExp();
 
-		 virtual bool revisaAvion();
+		 
 
 
 };

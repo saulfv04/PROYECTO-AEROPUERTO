@@ -2,18 +2,16 @@
 #include "Tripulantes.h"
 class Azafata : public Tripulantes
 {
-private:
-	string nacionalidad;
-public:
-	Azafata(string, string, int, string, avion*, string);
+	private:
+		string telefono;
+	public:
+		Azafata(string, string, int, string,Contrato*,avion*, string);
+		virtual ~Azafata();
 
-	virtual ~Azafata();
+		void setTelefono(string);
 
-	void setNacionalidad(string);
+		string getTelefono();
 
-	string getNacionalidad();
-
-	virtual bool revisaAvion();
+		
 };
-
 

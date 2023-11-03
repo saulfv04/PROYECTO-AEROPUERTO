@@ -1,6 +1,6 @@
 #include "Empleado.h"
 
-Empleado::Empleado(string c, string n, int e, string o): cedula(c), nombre(n),edad(e),ocupacion(o){}
+Empleado::Empleado(string c, string n, int e, string o,Contrato* cont): cedula(c), nombre(n),edad(e),ocupacion(o),con(cont){}
 
 Empleado::~Empleado(){}
 
@@ -11,6 +11,16 @@ void Empleado::setNombre(string n) { nombre = n; }
 void Empleado::setEdad(int e) { edad = e; }
 
 void Empleado::setOcupacion(string o) { ocupacion = o; }
+
+void Empleado::setContrato(Contrato* cont)
+{
+    con = cont;
+}
+
+Contrato* Empleado::getContrato()
+{
+    return con;
+}
 
 string Empleado::getCedula()
 {
@@ -36,13 +46,14 @@ string Empleado::toString()
 {
     stringstream s;
 
-    s << "CEDULA: " << cedula << endl;
+    s << " CEDULA: " << cedula << endl;
 
-    s << "NOMBRE: " << nombre << endl;
+    s << " NOMBRE: " << nombre << endl;
 
-    s << "EDAD: " << edad << endl;
+    s << " EDAD: " << edad << endl;
 
-    s << "OCUPACION: " << ocupacion << endl;
+    s << " OCUPACION: " << ocupacion << endl;
 
+    s << " CONTRATO: " << endl <<con->toString() << endl;
     return s.str();
 }

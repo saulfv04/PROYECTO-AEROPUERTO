@@ -1,16 +1,16 @@
 #include "Copiloto.h"
 
-Azafata::Azafata(string c, string n, int e, string o, avion* a, string t):Tripulantes(c,n,e,o), telefono(t) {}
+Copiloto::Copiloto(string c, string n, int e, string o,Contrato* cont, avion* a, string na) :Tripulantes(c, n, e, o,cont,a), nacionalidad(na) {}
 
-Azafata::~Azafata()
+Copiloto::~Copiloto()
 {}
 
-void Azafata::setTelefono(string t)
+void Copiloto::setNacionalidad(string na)
 {
-	telefono = t;
+	nacionalidad = na;
 }
 
-string Azafata::getTelefono()
+string Copiloto::getNacionalidad()
 {
-	return telefono;
+	return nacionalidad;
 }

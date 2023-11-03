@@ -1,18 +1,19 @@
 #pragma once
 #include "Tripulantes.h"
-class Azafata : public Tripulantes
+class Copiloto : public Tripulantes
 {
-	private:
-		string telefono;
-	public:
-		Azafata(string, string, int, string, avion*, string);
-		
-		virtual ~Azafata();
+private:
+	string nacionalidad;
+public:
+	Copiloto(string, string, int, string, Contrato*,avion*, string);
 
-		void setTelefono(string);
+	virtual ~Copiloto();
 
-		string getTelefono();
+	void setNacionalidad(string);
 
-		virtual bool revisaAvion();
+	string getNacionalidad();
+
+
 };
+
 

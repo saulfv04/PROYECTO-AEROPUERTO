@@ -69,6 +69,18 @@
     <ClInclude Include="ContratoTiempoIndefinido.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NodoEmpleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaEmpleado.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Administrativos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Miscelaneos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="avion.cpp">
@@ -123,6 +135,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ContratoTiempoIndefinido.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoEmpleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaEmpleado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Administrativos.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Miscelaneos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

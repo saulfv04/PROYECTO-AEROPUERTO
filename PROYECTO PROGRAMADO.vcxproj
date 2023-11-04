@@ -130,6 +130,7 @@
     <ClInclude Include="aCarga.h" />
     <ClInclude Include="aCivil.h" />
     <ClInclude Include="aComerciales.h" />
+    <ClInclude Include="Administrativos.h" />
     <ClInclude Include="aMilitar.h" />
     <ClInclude Include="avion.h" />
     <ClInclude Include="Copiloto.h" />
@@ -140,6 +141,9 @@
     <ClInclude Include="Azafata.h" />
     <ClInclude Include="FECHA.h" />
     <ClInclude Include="Empleado.h" />
+    <ClInclude Include="ListaEmpleado.h" />
+    <ClInclude Include="Miscelaneos.h" />
+    <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="tipoAvionCarga.h" />
     <ClInclude Include="tipoAvionComercial.h" />
@@ -150,6 +154,7 @@
     <ClCompile Include="aCarga.cpp" />
     <ClCompile Include="aCivil.cpp" />
     <ClCompile Include="aComerciales.cpp" />
+    <ClCompile Include="Administrativos.cpp" />
     <ClCompile Include="aMilitar.cpp" />
     <ClCompile Include="avion.cpp" />
     <ClCompile Include="Copiloto.cpp" />
@@ -160,6 +165,9 @@
     <ClCompile Include="Azafata.cpp" />
     <ClCompile Include="FECHA.cpp" />
     <ClCompile Include="Empleado.cpp" />
+    <ClCompile Include="ListaEmpleado.cpp" />
+    <ClCompile Include="Miscelaneos.cpp" />
+    <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="tipoAvionCarga.cpp" />
     <ClCompile Include="tipoAvionComercial.cpp" />

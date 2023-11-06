@@ -9,6 +9,9 @@ ListaEmpleado::ListaEmpleado()
     actual = NULL;
 }
 
+
+ListaEmpleado::~ListaEmpleado(){}
+
 void ListaEmpleado::insertarEmpleado(Empleado* empleado)
 {
     actual = primero;
@@ -100,10 +103,44 @@ void ListaEmpleado::insertarEmpleado(Empleado* empleado)
 			}
         }
 }
+void ListaEmpleado::revisarContratos()
+{
+    NodoEmpleado* actual = primero;
+    NodoEmpleado* previo = NULL;
 
+    while (actual != NULL) {
+        Empleado* empleado = actual->getEmpleado();
+        ContratoPlazoFijo* contrato = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato());
 
+        if (contrato != NULL && contrato->getDuracion() > 2) {
+            cout << "El contrato de " << empleado->getNombre() << " ha excedido los dos años. ¿Desea continuar en la empresa? (s/n): ";
+            char respuesta;
+            cin >> respuesta;
 
+            if (respuesta == 's' || respuesta == 'S') {
+                empleado->setContrato(new ContratoTiempoIndefinido());
+                previo = actual;
+                actual = actual->getSig();
+            }
+            else {
+                if (previo == NULL) {
+                    primero = actual->getSig();
+                }
+                else {
+                    previo->setSig(actual->getSig());
+                }
 
+                NodoEmpleado* temp = actual;
+                actual = actual->getSig();
+                delete temp;
+            }
+        }
+        else {
+            previo = actual;
+            actual = actual->getSig();
+        }
+    }
+}
 
 string ListaEmpleado::toString()
 {

@@ -9,6 +9,12 @@
 #include "aCarga.h"
 #include "aComerciales.h"
 #include "aCivil.h"
+#include "ContratoPlazoFijo.h"
+#include "ContratoTiempoIndefinido.h"
+#include "ContratoServicioProfesionales.h"
+#include "Administrativos.h"
+#include "Miscelaneos.h"
+
 
 
 
@@ -20,6 +26,7 @@ class ListaEmpleado
 	public:
 		ListaEmpleado();
 		void insertarEmpleado(Empleado*);
+		void revisarContratos();
 		string toString();
 
 };

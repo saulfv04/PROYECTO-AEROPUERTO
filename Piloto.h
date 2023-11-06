@@ -12,6 +12,9 @@ class Piloto : public Tripulantes
 
 		int getAniosExp();
 
+		string toString();
+		
+
 		 
 
 

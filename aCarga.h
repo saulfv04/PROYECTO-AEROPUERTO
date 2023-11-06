@@ -12,7 +12,7 @@ class aCarga :public aCivil
 		string tipo;
 		tipoAvionCarga* t;
 	public:
-		aCarga(Fecha*, double, int, string,double,double,bool,bool,string);
+		aCarga(Fecha*, double, int,double,double,bool,bool,string);
 		virtual ~aCarga();
 
 		void setAlturaPuerta(double);

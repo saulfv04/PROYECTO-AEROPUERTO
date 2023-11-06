@@ -8,3 +8,12 @@ void Tripulantes::setAvion(avion* a) { av = a; }
 
 avion* Tripulantes::getAvion() {return av;}
 
+string Tripulantes::toString()
+{
+    stringstream s;
+
+    s << this->av->toString() << endl;
+
+    return s.str();
+}
+

@@ -1,6 +1,6 @@
 #include "aComerciales.h"
 
-aComerciales::aComerciales(Fecha* f, double dr, int numP, string tA, int nC , bool pU, bool dP) : aCivil( f, dr, numP, tA), numeroCategoria(nC), pasilloUnico(pU), doblePasillo(dP)
+aComerciales::aComerciales(Fecha* fe, double dr, int numP, int nC , bool pU, bool dP) : aCivil(fe,dr,numP), numeroCategoria(nC), pasilloUnico(pU), doblePasillo(dP)
 {
 	tipo = t->darTipo(nC);
 }

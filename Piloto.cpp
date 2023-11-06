@@ -14,5 +14,13 @@ int Piloto::getAniosExp()
 	return aniosExp;
 }
 
+string Piloto::toString()
+{
+	stringstream s;
+	s << "Anios de Experiencia: " << aniosExp << endl;
+
+	return s.str();
+}
+
 
 

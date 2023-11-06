@@ -14,3 +14,11 @@ string Azafata::getTelefono()
 {
 	return telefono;
 }
+
+string Azafata::toString()
+{
+	stringstream s;
+	s << "Telefono: " << telefono << endl;
+
+	return s.str();
+}

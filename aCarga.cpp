@@ -1,7 +1,7 @@
 #include "aCarga.h"
 
-aCarga::aCarga(Fecha* f, double dr, int numP, string tA, double ap, double anP, bool es, bool pL, string ca) :
-	aCivil(f, dr, numP, tA), alturaPuerta(ap), anchuraPuerta(anP), escotilla(es), puertaLateral(pL), categoria(ca)
+aCarga::aCarga(Fecha* f, double dr, int numP, double ap, double anP, bool es, bool pL, string ca) :	
+aCivil(f, dr, numP), alturaPuerta(ap), anchuraPuerta(anP), escotilla(es), puertaLateral(pL), categoria(ca)
 {
 	tipo = t->darTipo(ca);
 

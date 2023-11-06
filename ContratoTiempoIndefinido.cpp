@@ -1,13 +1,17 @@
 #include "ContratoTiempoIndefinido.h"
 
-ContratoTiempoIndefinido::ContratoTiempoIndefinido(int cod, string dP, double s, Fecha* fI) :Contrato(cod, dP, s, fI)
+ContratoTiempoIndefinido::ContratoTiempoIndefinido(int cod, string dP, double s, Fecha* fI, string p, int cP) :Contrato(cod, dP, s, fI), plaza(p), codigoPlaza(cP)
 {
 	fFinal = NULL;
 	tipoCese = "INDEFINIDO";
-
-
 }
-
+ContratoTiempoIndefinido::ContratoTiempoIndefinido():Contrato(0, "", 0, NULL)
+{
+	plaza = "";
+	codigoPlaza = 0;
+	fFinal = NULL;
+	tipoCese = "INDEFINIDO";
+}
 ContratoTiempoIndefinido::~ContratoTiempoIndefinido()
 {
 }
@@ -15,6 +19,16 @@ ContratoTiempoIndefinido::~ContratoTiempoIndefinido()
 void ContratoTiempoIndefinido::setFechaIngreso(Fecha* fI)
 {
 	fInicio = fI;
+}
+
+void ContratoTiempoIndefinido::setPlaza(string p)
+{
+	plaza = p;
+}
+
+void ContratoTiempoIndefinido::setCodigoPlaza(int cP)
+{
+	codigoPlaza = cP;
 }
 
 void ContratoTiempoIndefinido::setFechaporCese(Fecha* fC)
@@ -26,6 +40,16 @@ void ContratoTiempoIndefinido::setFechaporCese(Fecha* fC)
 	tipoCese = tipo;
 
 	fFinal = fC;
+}
+
+string ContratoTiempoIndefinido::getPlaza()
+{
+	return plaza;
+}
+
+int ContratoTiempoIndefinido::getCodigoPlaza()
+{
+	return codigoPlaza;
 }
 
 Fecha* ContratoTiempoIndefinido::getFechaIngreso()
@@ -46,8 +70,10 @@ string ContratoTiempoIndefinido::getTipoCese()
 string ContratoTiempoIndefinido::toString()
 {
 	stringstream s;
-
-	s << "Cese: " << tipoCese << endl;
-
+	s << "Plaza: " << plaza << endl;
+	s << " Codigo de plaza: " << codigoPlaza << endl;
+	if (tipoCese != "INDEFINIDO") {
+		s << "Cese: " << tipoCese << endl;
+	}
 	return s.str();
 }

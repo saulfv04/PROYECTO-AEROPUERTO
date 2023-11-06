@@ -14,3 +14,11 @@ string Copiloto::getNacionalidad()
 {
 	return nacionalidad;
 }
+
+string Copiloto::toString()
+{
+	stringstream s;
+	s << "Nacionalidad: " << nacionalidad << endl;
+
+	return s.str();
+}

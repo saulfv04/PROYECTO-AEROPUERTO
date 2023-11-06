@@ -15,7 +15,6 @@ class ContratoServicioProfesionales : public Contrato
 
 
 		int getHorarioLaboral();
-		string tipoServicio;
 
 		string toString();
 

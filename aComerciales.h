@@ -11,7 +11,7 @@ class aComerciales :public aCivil
 		tipoAvionComercial* t;
 	public:
 		
-		aComerciales(Fecha*,double,int,string,int,bool,bool);
+		aComerciales(Fecha*,double,int,int,bool,bool);
 		
 		virtual ~aComerciales();
 

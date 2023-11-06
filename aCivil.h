@@ -4,10 +4,9 @@ class aCivil :public avion
 {
 protected:
 	int numeroPlaca;
-	string tipoAvion;
 public:
 
-	aCivil(Fecha*,double,int,string);
+	aCivil(Fecha*,double,int);
 	virtual ~aCivil();
 
 	void setNumeroPlaca(int);

@@ -19,6 +19,7 @@ int ContratoServicioProfesionales::getHorarioLaboral()
 	return horarioLaboral;
 }
 
+
 string ContratoServicioProfesionales::toString()
 {
 	stringstream s;

@@ -12,6 +12,6 @@ class ContratoPlazoFijo :public Contrato
 
 	Fecha* getFechaIngreso();
 	Fecha* getFechaCulminacion();
+	int getDuracion();
 
 };
-

@@ -28,6 +28,7 @@ class aCarga :public aCivil
 		double getAnchuraPuerta();
 		bool getEscotilla();
 		bool getPuertalLateral();
+		double darCapacidad();
 
 		string toString();
 

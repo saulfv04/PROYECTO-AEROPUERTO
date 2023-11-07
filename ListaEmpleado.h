@@ -14,7 +14,7 @@
 #include "ContratoServicioProfesionales.h"
 #include "Administrativos.h"
 #include "Miscelaneos.h"
-
+#include "ContenedorAviones.h"
 
 
 
@@ -25,9 +25,21 @@ class ListaEmpleado
 		NodoEmpleado* actual;
 	public:
 		ListaEmpleado();
+		~ListaEmpleado();
 		void insertarEmpleado(Empleado*);
 		void revisarContratos();
+		void eliminarEmpleado(string);
 		string toString();
+		string mostrarContratos();
+		string reporteAeronavesTripulacion();
+		string reportedePilotosParaAvionesdeCarga();
+		string reporteDeTodosLosContratosdeServicioProfesionales();
+		string reporteDeTodosLosContratosdePlazoFijo();
+		string reporteATodosLosContratosaTiempoIndefinido();
+		string reportedeTripulacionesdeLosAvionesComerciales();
+		string reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
+		
+
 
 };
 

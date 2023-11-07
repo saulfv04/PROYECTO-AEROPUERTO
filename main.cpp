@@ -31,7 +31,11 @@ int main() {
 	bool pasilloUnico;
 	bool doblePasillo;
 
-	
+	string idEmpleado;
+	int idAvion;
+
+	int opcionReporta;
+
 
 
 
@@ -687,11 +691,98 @@ int main() {
         	ContenedorAviones.insertarAvion(aeronave);
         	cout << "Aeronave ingresada exitosamente.\n";
     		}
-		default:
+			default:
 			cout << "Tipo de empleado o avion invalido. Por favor, intente de nuevo.\n";
 			break;
 		}
 		case 2:
+			cout << "Mantenimiento" << endl;
+			cout << "(1. Para eliminar un empleado, 2. Para eliminar un avion)" << endl;
+			int opcionEliminar;
+			cin >> opcionEliminar;
+
+			switch (opcionEliminar) {
+			case 1:
+				// Eliminar un empleado
+				cout << "Ingrese el ID del empleado a eliminar: ";
+				getline(cin, idEmpleado);
+				listaEmpleado.eliminarEmpleado(idEmpleado);
+				break;
+			case 2:
+				// Eliminar un avion
+				cout << "Ingrese el ID del avion a eliminar: ";
+				cin >> idAvion;
+				ContenedorAviones.eliminarAvion(idAvion);
+				break;
+			default:
+				cout << "Opcion invalida. Por favor, intente de nuevo.\n";
+				break;
+			}
+			break;
+		case 3:
+			cout << "Reportes" << endl;
+			cout << "1 - Reportes con contratos con sus empleados" << endl;
+			cout << "2 - Reporte de aeronaves con su tripulacion" << endl;
+			cout << "3 - Reporte de todas las aeronaves" << endl;
+			cout << "4 - Reporte de todos los empleados" << endl;
+			cout << "5 - Reporte de los pilotos para los aviones de carga" << endl;
+			cout << "6 - Reporte de todos los aviones que tienen mas de 20 anios" << endl;
+			cout << "7 - Reporte de todos los contrato de servicios profesionales" << endl;
+			cout << "8 - Reporte de todos los contratos a plazo fijo" << endl;
+			cout << "9 - Reporte de todos los contratos a tiempo indefinido" << endl;
+			cout << "10 - Reporte de los contratos de plazo fijo que ya excedieron los 2 anios" << endl;
+			cout << "11 - Reporte del avion de carga con mayor area" << endl;
+			cin >> opcionReporta;
+			switch (opcionReporta) {
+			case 1:
+				cout << "Reporte de contratos con sus empleados" << endl;
+				listaEmpleado.mostrarContratos();
+				break;
+			case 2:
+				cout << "Reporte de aeronaves con su tripulacion" << endl;
+				listaEmpleado.reporteAeronavesTripulacion();
+				break;
+			case 3:
+				cout << "Reporte de todas las aeronaves" << endl;
+				ContenedorAviones.toString();
+				break;
+			case 4:
+				cout << "Reporte de todos los empleados" << endl;
+				listaEmpleado.toString();
+				break;
+			case 5:
+				cout << "Reporte de los pilotos para los aviones de carga" << endl;
+				listaEmpleado.reportedePilotosParaAvionesdeCarga();
+				break;
+			case 6:
+				cout << "Reporte de todos los aviones que tienen mas de 20 anios" << endl;
+				ContenedorAviones.reporteDeAvionesConmasde20anios();
+				break;
+			case 7:
+				cout << "Reporte de todos los contrato de servicios profesionales" << endl;
+				listaEmpleado.reporteDeTodosLosContratosdeServicioProfesionales();
+				break;
+			case 8:
+				cout << "Reporte de todos los contratos a plazo fijo" << endl;
+				listaEmpleado.reporteDeTodosLosContratosdePlazoFijo();
+				break;
+			case 9:
+				cout << "Reporte de todos los contratos a tiempo indefinido" << endl;
+				listaEmpleado.reporteATodosLosContratosaTiempoIndefinido();
+				break;
+			case 10:
+				cout << "Reporte de los contratos de plazo fijo que ya excedieron los 2 anios" << endl;
+				listaEmpleado.reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
+				break;
+			case 11:
+				cout << "Reporte del avion de carga con mayor area" << endl;
+				ContenedorAviones.getAvionCarga();
+				break;
+			default:
+				cout << "Ingrese un numero valido" << endl;
+				break;
+			}
+
 		default:	
 		
 		}

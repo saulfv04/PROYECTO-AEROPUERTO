@@ -157,3 +157,189 @@ string ListaEmpleado::toString()
         
     return s.str();
 }
+
+void ListaEmpleado::eliminarEmpleado(string id){
+    NodoEmpleado* actual = primero;
+    NodoEmpleado* previo = NULL;
+    while(actual != NULL){
+        if(actual->getEmpleado()->getCedula() == id){
+            if(previo == NULL){
+                primero = actual->getSig();
+            }else{
+                previo->setSig(actual->getSig());
+            }
+            NodoEmpleado* temp = actual;
+            actual = actual->getSig();
+            delete temp->getEmpleado()->getContrato();
+            delete temp;
+        }else{
+            previo = actual;
+            actual = actual->getSig();
+        }
+    }
+}
+
+string ListaEmpleado::mostrarContratos(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Contrato* contrato = dynamic_cast<Contrato*>(actual->getEmpleado()->getContrato());  // Suponiendo que tienes un método getContrato
+
+            if (contrato != nullptr) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< contrato->toString();
+                } else {
+                    s << "El empleado no tiene un contrato.\n";
+                }
+                actual = actual->getSig();
+    }
+    return s.str();
+}
+
+string ListaEmpleado::reporteAeronavesTripulacion(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Tripulantes* tripulante = dynamic_cast<Tripulantes*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+
+            if (tripulante != nullptr) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< tripulante->getAvion()->toString();
+                } else {
+                    s << "El empleado no tiene un avion.\n";
+                }
+                actual = actual->getSig();
+    }
+    return s.str();
+}
+
+string ListaEmpleado::reportedePilotosParaAvionesdeCarga(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Tripulantes* tripulante = dynamic_cast<Tripulantes*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (tripulante != NULL) {
+                if (Piloto* piloto = dynamic_cast<Piloto*>(tripulante)) {
+                    if (aCarga* ac = dynamic_cast<aCarga*>(piloto->getAvion())) {
+                        s<< actual->getEmpleado()->toString();
+                        s<< piloto->toString();
+                    }
+                }
+            } else {
+                s << "No hay piloto con avion de carga\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
+
+
+string ListaEmpleado::reporteDeTodosLosContratosdeServicioProfesionales(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (empleado != NULL) {
+                if (ContratoServicioProfesionales* csp = dynamic_cast<ContratoServicioProfesionales*>(empleado->getContrato())) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< csp->toString();
+                }
+            } else {
+                s << "No hay contratos de servicio profesional\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
+
+string ListaEmpleado::reporteDeTodosLosContratosdePlazoFijo(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (empleado != NULL) {
+                if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< cpf->toString();
+                }
+            } else {
+                s << "No hay contratos de plazo fijo\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
+
+string ListaEmpleado::reporteATodosLosContratosaTiempoIndefinido(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (empleado != NULL) {
+                if (ContratoTiempoIndefinido* cti = dynamic_cast<ContratoTiempoIndefinido*>(empleado->getContrato())) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< cti->toString();
+                }
+            } else {
+                s << "No hay contratos a tiempo indefinido\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
+
+string ListaEmpleado::reportedeTripulacionesdeLosAvionesComerciales(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Tripulantes* tripulante = dynamic_cast<Tripulantes*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (tripulante != NULL) {
+                if (Azafata* azafata = dynamic_cast<Azafata*>(tripulante)) {
+                    if (aComerciales* ac = dynamic_cast<aComerciales*>(azafata->getAvion())) {
+                        s<< actual->getEmpleado()->toString();
+                    }
+                }
+                if (Piloto* piloto = dynamic_cast<Piloto*>(tripulante)) {
+                    if (aComerciales* ac = dynamic_cast<aComerciales*>(piloto->getAvion())) {
+                        s<< actual->getEmpleado()->toString();
+                    }
+                }
+                if (Copiloto* copiloto = dynamic_cast<Copiloto*>(tripulante)) {
+                    if (aComerciales* ac = dynamic_cast<aComerciales*>(copiloto->getAvion())) {
+                        s<< actual->getEmpleado()->toString();
+                    }
+            } else {
+                s << "No tripulantes con aviones comerciales\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+    }
+}
+
+string ListaEmpleado::reportedeloscontratosplazofijoqueyaexcedieronlos2anios(){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (empleado != NULL) {
+                if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
+                    if (cpf->getDuracion() > 2) {
+                        s<< actual->getEmpleado()->toString();
+                    }
+                }
+            } else {
+                s << "No hay contratos de plazo fijo que excedan los 2 anios\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
+
+

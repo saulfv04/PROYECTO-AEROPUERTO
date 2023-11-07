@@ -1,5 +1,6 @@
 #pragma once
 #include "avion.h"
+#include "aCarga.h"
 #define  const tam 15
 class ContenedorAviones
 {
@@ -15,6 +16,8 @@ class ContenedorAviones
 		int getCant();
 		avion* getAvion(int);
 
-		
+		void eliminarAvion(int);
+		string reporteDeAvionesConmasde20anios();
+		aCarga* getAvionCarga();
 };
 

@@ -97,4 +97,7 @@ string aCarga::toString()
 	return s.str();
 }
 
+double aCarga::darCapacidad(){
+	return anchuraPuerta*alturaPuerta;}
+
 

@@ -18,6 +18,8 @@ class ContratoServicioProfesionales : public Contrato
 
 		string toString();
 
+		
+
 
 
 };

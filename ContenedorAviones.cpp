@@ -49,3 +49,33 @@ int ContenedorAviones::getCant()
 avion* ContenedorAviones::getAvion(int i){
 	return vec[i];
 }
+
+void ContenedorAviones::eliminarAvion(int i){
+	delete vec[i];
+}
+
+string ContenedorAviones::reporteDeAvionesConmasde20anios(){
+	stringstream s;
+	for(int i = 0; i < cant; i++)
+	{
+		if (vec[i]->getFecha()->getAnio() < 1998)
+		{
+			s << vec[i]->toString() << endl;
+		}
+	}
+	return s.str();
+}
+aCarga* ContenedorAviones::getAvionCarga(){
+	aCarga* avionMayorArea = nullptr;
+    double mayorArea = 0;
+
+    for (int i = 0; i < cant; i++) {
+        aCarga* ac = dynamic_cast<aCarga*>(vec[i]);
+        if (ac != nullptr && ac->darCapacidad() > mayorArea) {  // Suponiendo que tienes un método getArea
+            avionMayorArea = ac;
+            mayorArea = ac->darCapacidad();
+        }
+    }
+
+    return avionMayorArea;
+}

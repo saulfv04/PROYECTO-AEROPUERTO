@@ -2,7 +2,8 @@
 
 ContenedorAviones::ContenedorAviones()
 {
-	vec = new avion*[tam];
+	vec = new avion*[15];
+	tam = 15;
 	cant = 0;
 	for(int i = 0; i < tam; i++)
 	{
@@ -78,4 +79,17 @@ aCarga* ContenedorAviones::getAvionCarga(){
     }
 
     return avionMayorArea;
+}
+
+string ContenedorAviones::informaciondelaaeronavedeAviacioncivilconsuplaca(int p){
+	stringstream s;
+	for(int i = 0; i < cant; i++)
+	{
+		aCivil* a = dynamic_cast<aCivil*>(vec[i]);
+		if (a->getNumeroPlaca() == p)
+		{
+			s << a->toString() << endl;
+		}
+	}
+	return s.str();
 }

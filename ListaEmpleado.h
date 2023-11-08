@@ -38,8 +38,8 @@ class ListaEmpleado
 		string reporteATodosLosContratosaTiempoIndefinido();
 		string reportedeTripulacionesdeLosAvionesComerciales();
 		string reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
-		
-
+		string consultadetripulantepormediodecedulaydevuelvesuavion(string);
+		string consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(int);
 
 };
 

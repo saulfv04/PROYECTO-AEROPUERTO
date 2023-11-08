@@ -342,4 +342,50 @@ string ListaEmpleado::reportedeloscontratosplazofijoqueyaexcedieronlos2anios(){
     return s.str();
 }
 
+string ListaEmpleado::consultadetripulantepormediodecedulaydevuelvesuavion(string c){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Tripulantes* tripulante = dynamic_cast<Tripulantes*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (tripulante != NULL) {
+                if (tripulante->getCedula() == c) {
+                    s<< actual->getEmpleado()->toString();
+                    s<< tripulante->getAvion()->toString();
+                }
+            } else {
+                s << "No hay tripulantes con esa cedula\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}
 
+string ListaEmpleado::consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(int nC){
+    actual = primero;
+    stringstream s;
+    while(actual != NULL){
+        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  // Suponiendo que tienes un método getContrato
+                
+            if (empleado != NULL) {
+                if (empleado->getContrato()->getCodContrato() == nC) {
+                    if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
+                        s<< actual->getEmpleado()->toString();
+                        s<< cpf->toString();
+                    }
+                    if (ContratoTiempoIndefinido* cti = dynamic_cast<ContratoTiempoIndefinido*>(empleado->getContrato())) {
+                        s<< actual->getEmpleado()->toString();
+                        s<< cti->toString();
+                    }
+                    if (ContratoServicioProfesionales* csp = dynamic_cast<ContratoServicioProfesionales*>(empleado->getContrato())) {
+                        s<< actual->getEmpleado()->toString();
+                        s<< csp->toString();
+                    }
+                }
+            } else {
+                s << "No hay contratos con ese numero\n";
+            }
+            actual = actual->getSig();
+    }
+    return s.str();
+}

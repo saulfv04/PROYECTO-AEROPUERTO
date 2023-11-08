@@ -1,7 +1,9 @@
 #include "aMilitar.h"
 
-aMilitar::aMilitar(Fecha* f, double db, double vM, string cA) :avion(f, db), velocidadMax(vM), categoriaAv(cA){
-	tipo = t->darCategoria(categoriaAv);
+aMilitar::aMilitar(Fecha* f, double db, double vM, string cA) :avion(f, db){
+	velocidadMax = vM;
+	categoriaAv = cA;
+	tipo = t->darCategoria(cA);
 }
 
 aMilitar::~aMilitar()

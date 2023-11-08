@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#include "FECHA.h";
+#include "FECHA.h"
 
 
 using namespace std;

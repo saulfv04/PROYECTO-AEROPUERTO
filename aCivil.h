@@ -10,10 +10,10 @@ public:
 	virtual ~aCivil();
 
 	void setNumeroPlaca(int);
-	void setTipoAvion(string);
+	
 
 	int getNumeroPlaca();
-	string getTipoAvion();
+	
 
 	virtual string toString();
 

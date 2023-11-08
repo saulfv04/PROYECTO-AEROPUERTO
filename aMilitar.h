@@ -20,7 +20,7 @@ class aMilitar :public avion
 		string gettipoAvionMilitar();
 		string getcategoriaAv();
 
-		string toString();
+		 virtual string toString();
 
 
 

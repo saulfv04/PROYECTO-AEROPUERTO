@@ -168,10 +168,10 @@
     <ClCompile Include="FECHA.cpp" />
     <ClCompile Include="Empleado.cpp" />
     <ClCompile Include="ListaEmpleado.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
     <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="tipoAvionCarga.cpp" />
     <ClCompile Include="tipoAvionComercial.cpp" />
     <ClCompile Include="tipoAvionMilitar.cpp" />

@@ -1,7 +1,7 @@
 #include "ListaEmpleado.h"
 #include "ContenedorAviones.h"
 
-int main() {
+int hola() {
     ListaEmpleado listaEmpleado;
     ContenedorAviones ContenedorAviones;
 
@@ -35,6 +35,12 @@ int main() {
 	int idAvion;
 
 	int opcionReporta;
+
+	int opcionConsulta;
+
+	string ced;
+	int cod;
+	int nP;
 
 
 
@@ -159,19 +165,16 @@ int main() {
 					if (indiceAvion < 0 || indiceAvion >= 15) {
 						cout << "Indice de avion invalido. Por favor, intente de nuevo.\n";
 					}
-				default:
-					cout << "Tipo de contrato invalido. Por favor, intente de nuevo.\n";
+					cout << "Ingrese el indice del avion que desea asignar al piloto (0-14): ";
+					int indiceAvion;
+					cin >> indiceAvion;
+					if (indiceAvion < 0 || indiceAvion >= 15) {
+						cout << "Indice de avion invalido. Por favor, intente de nuevo.\n";
+					}
+					avion* avion = ContenedorAviones.getAvion(indiceAvion);
+					empleado = new Piloto(cedula, nombre, edad, ocupacion, contrato, avion, aniosExperiencia);
 					break;
-				cout << "Ingrese el indice del avion que desea asignar al piloto (0-14): ";
-				int indiceAvion;
-				cin >> indiceAvion;
-				if (indiceAvion < 0 || indiceAvion >= 15) {
-					cout << "Indice de avion invalido. Por favor, intente de nuevo.\n";
 				}
-				avion* avion = ContenedorAviones.getAvion(indiceAvion);
-				empleado = new Piloto(cedula, nombre, edad, ocupacion, contrato, avion, aniosExperiencia);
-				break;
-			}
 			case 2:
 				cout << "Ingrese los detalles del Copiloto:\n";
 				cout << "Ingrese la cedula del Copiloto: ";
@@ -265,9 +268,6 @@ int main() {
 					cin >> anio;
 					Fecha* fechaFinal = new Fecha(dia, mes, anio);
 					Contrato* contrato = new ContratoServicioProfesionales(codContrato, descPuesto, salario, fechaInicio, fechaFinal, horarioLaboral, tipoServicio);
-					break;
-				default:
-					cout << "Tipo de contrato invalido. Por favor, intente de nuevo.\n";
 					break;
 				}
 				cout << "Ingrese el indice del avion que desea asignar al Copiloto (0-14): ";
@@ -373,20 +373,17 @@ int main() {
 					Fecha* fechaFinal = new Fecha(dia, mes, anio);
 					Contrato* contrato = new ContratoServicioProfesionales(codContrato, descPuesto, salario, fechaInicio, fechaFinal, horarioLaboral, tipoServicio);
 					break;
-				default:
-					cout << "Tipo de contrato invalido. Por favor, intente de nuevo.\n";
+					cout << "Ingrese el indice del avion que desea asignar a la Azafata (0-14): ";
+					int indiceAvion;
+					cin >> indiceAvion;
+					if (indiceAvion < 0 || indiceAvion >= 15) {
+						cout << "Indice de avion invalido. Por favor, intente de nuevo.\n";
+					}
+					avion* a = ContenedorAviones.getAvion(indiceAvion);
+					empleado = new Azafata(cedula, nombre, edad, ocupacion, contrato, a, telefono);
 					break;
 				}
-			cout << "Ingrese el indice del avion que desea asignar a la Azafata (0-14): ";
-			int indiceAvion;
-			cin >> indiceAvion;
-			if (indiceAvion < 0 || indiceAvion >= 15) {
-				cout << "Indice de avion invalido. Por favor, intente de nuevo.\n";
 			}
-			avion* a = ContenedorAviones.getAvion(indiceAvion);
-			empleado = new Azafata(cedula, nombre, edad, ocupacion, contrato, a, telefono);
-			break;
-		}
     	case 2:
         	cout << "Ingrese los detalles del administrativo:\n";
 			cout << "Ingrese la cedula del administrativo: ";
@@ -782,14 +779,41 @@ int main() {
 				cout << "Ingrese un numero valido" << endl;
 				break;
 			}
-
+		case 4:
+			cout<<"-----CONSULTA------"<<endl;
+			cout<<"1 - Consulta de nave por medio de cedula del empleado"<<endl;
+			cout<<"2 - Consulta con numero de contrato, para saber su tipo de contrato"<<endl;
+			cout<<"3 - Consulta de aeronave civil con ayuda de su numero de placa"<<endl;
+			cin>>opcionConsulta;
+			switch(opcionConsulta){
+				case 1:
+					cout<<"Ingrese la cedula del empleado"<<endl;
+					getline(cin,ced);
+					listaEmpleado.consultadetripulantepormediodecedulaydevuelvesuavion(ced);
+					break;
+				case 2:
+					cout<<"Ingrese el numero de contrato"<<endl;
+					cin>>codContrato;
+					listaEmpleado.consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codContrato);
+					break;
+				case 3:
+					cout<<"Ingrese el numero de placa"<<endl;
+					cin>>nP;
+					ContenedorAviones.informaciondelaaeronavedeAviacioncivilconsuplaca(nP);
+					break;
+				default:
+					cout<<"Ingrese un numero valido"<<endl;
+					break;
+			}
+		case 5:
+			return 0 ;
 		default:	
-		
+			cout << "Opcion invalida. Por favor, intente de nuevo.\n";
+			break;
 		}
-		
-    
 
     system("pause");
     return 0;
+	}
 }
 

@@ -142,8 +142,10 @@
     <ClInclude Include="Azafata.h" />
     <ClInclude Include="FECHA.h" />
     <ClInclude Include="Empleado.h" />
+    <ClInclude Include="ListaContrato.h" />
     <ClInclude Include="ListaEmpleado.h" />
     <ClInclude Include="Miscelaneos.h" />
+    <ClInclude Include="NodoContrato.h" />
     <ClInclude Include="NodoEmpleado.h" />
     <ClInclude Include="Piloto.h" />
     <ClInclude Include="tipoAvionCarga.h" />
@@ -167,8 +169,10 @@
     <ClCompile Include="Azafata.cpp" />
     <ClCompile Include="FECHA.cpp" />
     <ClCompile Include="Empleado.cpp" />
+    <ClCompile Include="ListaContrato.cpp" />
     <ClCompile Include="ListaEmpleado.cpp" />
     <ClCompile Include="Miscelaneos.cpp" />
+    <ClCompile Include="NodoContrato.cpp" />
     <ClCompile Include="NodoEmpleado.cpp" />
     <ClCompile Include="Piloto.cpp" />
     <ClCompile Include="Source.cpp" />

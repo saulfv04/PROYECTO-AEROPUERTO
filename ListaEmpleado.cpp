@@ -172,10 +172,15 @@ void ListaEmpleado::eliminarEmpleado(string id){
             actual = actual->getSig();
             delete temp->getEmpleado()->getContrato();
             delete temp;
+            cout << "Eliminado Correctamente";
+            break;
         }else{
             previo = actual;
             actual = actual->getSig();
         }
+    }
+    if (actual == NULL) {
+        cout << "No existe empleado con ese id" << endl;
     }
 }
 

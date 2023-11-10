@@ -72,7 +72,7 @@ aCarga* ContenedorAviones::getAvionCarga(){
 
     for (int i = 0; i < cant; i++) {
         aCarga* ac = dynamic_cast<aCarga*>(vec[i]);
-        if (ac != nullptr && ac->darCapacidad() > mayorArea) {  // Suponiendo que tienes un método getArea
+        if (ac != nullptr && ac->darCapacidad() > mayorArea) {  
             avionMayorArea = ac;
             mayorArea = ac->darCapacidad();
         }

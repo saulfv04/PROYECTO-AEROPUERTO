@@ -21,11 +21,20 @@ string Miscelaneos::getGradoEscolar()
 string Miscelaneos::toString()
 {
 	stringstream s;
+	s << " CEDULA: " << cedula << endl;
 
-	s << "Tipo de empleado Planta" << endl;
-	s << " Tipo de Empleado de Planta: Miscelaneo" << endl;
-	s << " Grado Escolar: " << gradoEscolar << endl;
-	s << " Labor: " << labor << endl;
+	s << " NOMBRE: " << nombre << endl;
+
+	s << " EDAD: " << edad << endl;
+
+	s << " OCUPACION: " << ocupacion << endl;
+
+	s << " CONTRATO: " << endl << con->toString() << endl;
+
+	s << "TIPO EMPLEADO PLANTA" << endl;
+	s << " TIPO DE EMPLEADO DE PLANTA: MISCELANEO " << endl;
+	s << " GRADO ESCOLAR: " << gradoEscolar << endl;
+	s << " LABOR: " << labor << endl;
 
 	return s.str();
 }

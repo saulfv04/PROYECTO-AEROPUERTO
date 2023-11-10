@@ -14,11 +14,5 @@ int aCivil::getNumeroPlaca()
 	return numeroPlaca;
 }
 
-string aCivil::toString()
-{
-	stringstream s;
-		s << "Numero de Placa: " << numeroPlaca << endl;
-	return s.str();
-}
 
 

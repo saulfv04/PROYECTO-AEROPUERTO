@@ -19,10 +19,19 @@ string Administrativos::getTitulo()
 string Administrativos::toString()
 {
 	stringstream s;
+	s << " CEDULA: " << cedula << endl;
 
-	s << "Empleado de Planta" << endl;
-	s << "Tipo de Empleado: Administrativo" << endl;
-	s << "Titulo Administrativo: " << tituloAdm << endl;
+	s << " NOMBRE: " << nombre << endl;
+
+	s << " EDAD: " << edad << endl;
+
+	s << " OCUPACION: " << ocupacion << endl;
+
+	s << " CONTRATO: " << endl << con->toString() << endl;
+
+	s << "EMPLEADO DE PLANTA" << endl;
+	s << "TIPO DE EMPLEADO: ADMINISTRATIVO" << endl;
+	s << "TITULO ADMINISTRATIVO: " << tituloAdm << endl;
 
 	
 	return s.str();

@@ -21,7 +21,7 @@ class avion
 		Fecha* getFecha();
 		double getDistanRecorrida();
 
-		virtual string toString();
+		virtual string toString() = 0;
 		
 
 

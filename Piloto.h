@@ -12,7 +12,7 @@ class Piloto : public Tripulantes
 
 		int getAniosExp();
 
-		string toString();
+		virtual string toString();
 		
 
 		 

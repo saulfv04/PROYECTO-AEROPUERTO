@@ -14,6 +14,6 @@ class ContratoPlazoFijo :public Contrato
 	Fecha* getFechaCulminacion();
 	int getDuracion();
 
-	string toString();
+	virtual string toString();
 
 };

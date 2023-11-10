@@ -26,7 +26,7 @@ class aComerciales :public aCivil
 		bool getPasilloUnico();
 		bool getDoblePiso();
 
-		string toString();
+		virtual string toString();
 
 
 

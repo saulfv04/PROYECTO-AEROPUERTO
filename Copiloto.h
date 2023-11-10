@@ -13,7 +13,7 @@ public:
 
 	string getNacionalidad();
 
-	string toString();
+	 virtual string toString();
 
 
 };

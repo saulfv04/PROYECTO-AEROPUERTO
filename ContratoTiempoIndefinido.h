@@ -25,7 +25,7 @@ class ContratoTiempoIndefinido :public Contrato
 		string getTipoCese();
 
 
-		string toString();
+		virtual string toString();
 
 
 };

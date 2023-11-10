@@ -17,7 +17,7 @@ public:
 	string getGradoEscolar();
 
 
-	string toString();
+	virtual string toString();
 
 };
 

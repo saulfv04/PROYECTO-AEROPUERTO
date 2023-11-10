@@ -13,7 +13,7 @@ class Administrativos:public Empleado
 		string getTitulo();
 
 
-		string toString();
+		virtual string toString();
 		
 
 };

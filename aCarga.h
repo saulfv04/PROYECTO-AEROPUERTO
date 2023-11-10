@@ -30,7 +30,7 @@ class aCarga :public aCivil
 		bool getPuertalLateral();
 		double darCapacidad();
 
-		string toString();
+		virtual string toString();
 
 
 };

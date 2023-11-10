@@ -12,7 +12,7 @@ class Azafata : public Tripulantes
 
 		string getTelefono();
 
-		string toString();
+		virtual string toString();
 
 		
 };

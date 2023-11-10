@@ -18,7 +18,20 @@ string Copiloto::getNacionalidad()
 string Copiloto::toString()
 {
 	stringstream s;
-	s << "Nacionalidad: " << nacionalidad << endl;
+
+	s << " CEDULA: " << cedula << endl;
+
+	s << " NOMBRE: " << nombre << endl;
+
+	s << " EDAD: " << edad << endl;
+
+	s << " OCUPACION: " << ocupacion << endl;
+
+	s << " CONTRATO: " << endl << con->toString() << endl;
+
+	s << "NACIONALIDAD: " << nacionalidad << endl;
+
+	s << "AVION:" << endl << this->av->toString() << endl;
 
 	return s.str();
 }

@@ -27,13 +27,27 @@ int ContratoPlazoFijo::getDuracion()
 {
 	  int aniosTrabajando = getFechaCulminacion()->getAnio() - getFechaIngreso()->getAnio();
 
-    // If the end month is before the start month, or if the end month is the same but the end day is before the start day, subtract a year
+    
     if (getFechaCulminacion()->getMes() < getFechaIngreso()->getMes() ||
         (getFechaCulminacion()->getMes() == getFechaIngreso()->getMes() && getFechaCulminacion()->getDia() < getFechaIngreso()->getDia())) {
         aniosTrabajando--;
     }
 
     return aniosTrabajando;
+}
+
+string ContratoPlazoFijo::toString()
+{
+	stringstream s;
+
+	s << "Codigo del Contrato: " << codContrato << endl;
+	s << " Descuento por el Puesto: " << descPuesto << endl;
+	s << " Salario: " << salario << endl;
+	s << " Fecha de Inicio: " << fInicio->toString() << endl;
+	if (fFinal != NULL) {
+		s << " Fecha de Conclusion del contrato: " << fFinal->toString() << endl;
+	}
+    return s.str();
 }
 
 

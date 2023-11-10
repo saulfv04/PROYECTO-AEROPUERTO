@@ -30,7 +30,7 @@ class Empleado
 		int getEdad();
 		string getOcupacion();
 
-		virtual string toString();
+		virtual string toString() = 0;
 
 
 };

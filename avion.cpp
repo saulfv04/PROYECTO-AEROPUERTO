@@ -29,12 +29,3 @@ double avion::getDistanRecorrida()
 	return distanciaRecorrida;
 }
 
-string avion::toString()
-{
-	stringstream s;
-
-	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
-	s << " Distacia Recorrida: " << distanciaRecorrida << endl;
-
-	return s.str();
-}

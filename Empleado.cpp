@@ -42,18 +42,3 @@ string Empleado::getOcupacion()
 	return ocupacion;
 }
 
-string Empleado::toString()
-{
-    stringstream s;
-
-    s << " CEDULA: " << cedula << endl;
-
-    s << " NOMBRE: " << nombre << endl;
-
-    s << " EDAD: " << edad << endl;
-
-    s << " OCUPACION: " << ocupacion << endl;
-
-    s << " CONTRATO: " << endl <<con->toString() << endl;
-    return s.str();
-}

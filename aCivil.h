@@ -15,7 +15,7 @@ public:
 	int getNumeroPlaca();
 	
 
-	virtual string toString();
+	virtual string toString() = 0;
 
 
 

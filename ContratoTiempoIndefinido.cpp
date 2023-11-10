@@ -70,6 +70,14 @@ string ContratoTiempoIndefinido::getTipoCese()
 string ContratoTiempoIndefinido::toString()
 {
 	stringstream s;
+
+	s << "Codigo del Contrato: " << codContrato << endl;
+	s << " Descuento por el Puesto: " << descPuesto << endl;
+	s << " Salario: " << salario << endl;
+	s << " Fecha de Inicio: " << fInicio->toString() << endl;
+	if (fFinal != NULL) {
+		s << " Fecha de Conclusion del contrato: " << fFinal->toString() << endl;
+	}
 	s << "Plaza: " << plaza << endl;
 	s << " Codigo de plaza: " << codigoPlaza << endl;
 	if (tipoCese != "INDEFINIDO") {

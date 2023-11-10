@@ -75,6 +75,10 @@ string aCarga::toString()
 {
 	stringstream s;
 
+
+	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
+	s << " Distacia Recorrida: " << distanciaRecorrida << endl;
+
 	s << "Altura puerta: " << alturaPuerta << endl;
 	s << " Anchura de la Puerta: " << anchuraPuerta << endl;
 	if (escotilla == true) {
@@ -98,6 +102,7 @@ string aCarga::toString()
 }
 
 double aCarga::darCapacidad(){
-	return anchuraPuerta*alturaPuerta;}
+	return anchuraPuerta*alturaPuerta;
+}
 
 

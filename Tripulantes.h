@@ -13,7 +13,7 @@ class Tripulantes :public Empleado
 
 		avion* getAvion();
 
-		virtual string toString();
+		virtual string toString() = 0;
 
 };
 

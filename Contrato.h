@@ -33,7 +33,7 @@ class Contrato
 		Fecha* getFechaInicio();
 		Fecha* getFechaFinal();
 
-		virtual string toString();
+		virtual string toString() = 0;
 
 
 

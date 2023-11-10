@@ -45,6 +45,8 @@ string aMilitar::toString()
 {
 	stringstream s;
 
+	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
+	s << " Distacia Recorrida: " << distanciaRecorrida << endl;
 	s << "Velocidad Maxima: " << velocidadMax << endl;
 	s << " Tipo de Avion Militar: " << tipo << endl;
 	s << " Categoria de Avion: " << categoriaAv << endl;

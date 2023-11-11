@@ -4,9 +4,9 @@
 
 int main() {
 	//Contenedores
-	ListaEmpleado listaEmpleado;
+	ListaEmpleado* listaEmpleado = new ListaEmpleado();
 	ContenedorAviones ContenedorAviones;
-	ListaContrato listaContrato;
+	ListaContrato* listaContrato = new ListaContrato();
 
 	//Objetos dinamicos
 	Empleado* empleado = NULL;
@@ -243,7 +243,7 @@ int main() {
 					cin >> a;
 					fFinal = new Fecha(d, m, a);
 					contrato = new ContratoPlazoFijo(codCon, descPue, sal, fInicio, fFinal);
-					listaContrato.insertaContrato(contrato);
+					listaContrato->insertaContrato(contrato);
 					break;
 				case 2:
 					cout << "-------CONTRATO TIEMPO INDEFINIDO-------" << endl << endl;
@@ -266,7 +266,7 @@ int main() {
 					cout << "Ingrese el codigo de la plaza" << endl;
 					cin >> codPl;
 					contrato2 = new ContratoTiempoIndefinido(codCon, descPue, sal, fIni, pl, codPl);
-					listaContrato.insertaContrato(contrato2);
+					listaContrato->insertaContrato(contrato2);
 					break;
 				case 3:
 					cout << "-------CONTRATO DE SERVICIOS PROFESIONALES-------" << endl << endl;
@@ -297,7 +297,7 @@ int main() {
 					cout << "Ingrese el tipo de servicio" << endl;
 					cin >> tS;
 					contrato3 = new ContratoServicioProfesionales(codCon, descPue, sal, fI, fF, hL, tS);
-					listaContrato.insertaContrato(contrato3);
+					listaContrato->insertaContrato(contrato3);
 					break;
 				default:
 					cout << "Ingrese un numero valido" << endl;
@@ -326,7 +326,7 @@ int main() {
 						cin >> aE;
 						cout << "Ingrese el codigo del contrato que quiere darle al Piloto" << endl;
 						cin >> cC;
-						if (listaContrato.buscarContrato(cC) == NULL) {
+						if (listaContrato->buscarContrato(cC) == NULL) {
 							cout << "No existe un contrato con ese codigo" << endl;
 						}
 						cout << "Ingrese un numero para asignarle un avion al Piloto" << endl;
@@ -334,8 +334,8 @@ int main() {
 						if (ContenedorAviones.getAvion(iA-1) == NULL) {
 							cout << "No existe un avion para ese indice" << endl;
 						}
-						empleado = new Piloto(ced, nom, ed, ocup, listaContrato.buscarContrato(cC), ContenedorAviones.getAvion(iA-1), aE);
-						listaEmpleado.insertarEmpleado(empleado);
+						empleado = new Piloto(ced, nom, ed, ocup, listaContrato->buscarContrato(cC), ContenedorAviones.getAvion(iA-1), aE);
+						listaEmpleado->insertarEmpleado(empleado);
 						break;
 					case 2:
 						cout << "Ingrese los detalles del Copiloto:\n";
@@ -351,7 +351,7 @@ int main() {
 						cin >> naciona;
 						cout << "Ingrese el codigo del contrato que quiere darle al Copiloto" << endl;
 						cin >> cC;
-						if (listaContrato.buscarContrato(cC) == NULL) {
+						if (listaContrato->buscarContrato(cC) == NULL) {
 							cout << "No existe un contrato con ese codigo" << endl;
 						}
 						cout << "Ingrese un numero para asignarle un avion al Coiloto" << endl;
@@ -359,8 +359,8 @@ int main() {
 						if (ContenedorAviones.getAvion(iA-1) == NULL) {
 							cout << "No existe un avion para ese indice" << endl;
 						}
-						empleado2 = new Copiloto(ced, nom, ed, ocup, listaContrato.buscarContrato(cC), ContenedorAviones.getAvion(iA-1), naciona);
-						listaEmpleado.insertarEmpleado(empleado2);
+						empleado2 = new Copiloto(ced, nom, ed, ocup, listaContrato->buscarContrato(cC), ContenedorAviones.getAvion(iA-1), naciona);
+						listaEmpleado->insertarEmpleado(empleado2);
 						break;
 					case 3:
 						cout << "Ingrese los detalles del Azafata:\n";
@@ -376,7 +376,7 @@ int main() {
 						cin >> tel;
 						cout << "Ingrese el codigo del contrato que quiere darle al Azafata" << endl;
 						cin >> cC;
-						if (listaContrato.buscarContrato(cC) == NULL) {
+						if (listaContrato->buscarContrato(cC) == NULL) {
 							cout << "No existe un contrato con ese codigo" << endl;
 						}
 						cout << "Ingrese un numero para asignarle un avion al Azafata" << endl;
@@ -384,8 +384,8 @@ int main() {
 						if (ContenedorAviones.getAvion(iA-1) == NULL) {
 							cout << "No existe un avion para ese indice" << endl;
 						}
-						empleado3 = new Azafata(ced, nom, ed, ocup, listaContrato.buscarContrato(cC), ContenedorAviones.getAvion(iA-1), tel);
-						listaEmpleado.insertarEmpleado(empleado3);
+						empleado3 = new Azafata(ced, nom, ed, ocup, listaContrato->buscarContrato(cC), ContenedorAviones.getAvion(iA-1), tel);
+						listaEmpleado->insertarEmpleado(empleado3);
 						break;
 					default:
 						cout << "Ingrese un numero valido" << endl;
@@ -406,11 +406,11 @@ int main() {
 					cin >> tiAd;
 					cout << "Ingrese el codigo del contrato que quiere darle al Administrativo" << endl;
 					cin >> cC;
-					if (listaContrato.buscarContrato(cC) == NULL) {
+					if (listaContrato->buscarContrato(cC) == NULL) {
 						cout << "No existe un contrato con ese codigo" << endl;
 					}
-					empleado4 = new Administrativos(ced, nom, ed, ocup, listaContrato.buscarContrato(cC), tiAd);
-					listaEmpleado.insertarEmpleado(empleado4);
+					empleado4 = new Administrativos(ced, nom, ed, ocup, listaContrato->buscarContrato(cC), tiAd);
+					listaEmpleado->insertarEmpleado(empleado4);
 					break;
 				case 3:
 					cout << "Ingrese los detalles del Miscelaneo:\n";
@@ -428,11 +428,11 @@ int main() {
 					cin >> la;
 					cout << "Ingrese el codigo del contrato que quiere darle al Miscelaneo" << endl;
 					cin >> cC;
-					if (listaContrato.buscarContrato(cC) == NULL) {
+					if (listaContrato->buscarContrato(cC) == NULL) {
 						cout << "No existe un contrato con ese codigo" << endl;
 					}
-					empleado5 = new Miscelaneos(ced, nom, ed, ocup, listaContrato.buscarContrato(cC), gradoEsc, la);
-					listaEmpleado.insertarEmpleado(empleado5);
+					empleado5 = new Miscelaneos(ced, nom, ed, ocup, listaContrato->buscarContrato(cC), gradoEsc, la);
+					listaEmpleado->insertarEmpleado(empleado5);
 					break;
 				default:
 					cout << "Ingrese un numero valido" << endl;
@@ -451,7 +451,7 @@ int main() {
 				// Eliminar un empleado
 				cout << "Ingrese el ID del empleado a eliminar: ";
 				cin >> idEm;
-				listaEmpleado.eliminarEmpleado(idEm);
+				listaEmpleado->eliminarEmpleado(idEm);
 				break;
 			case 2:
 				// Eliminar un avion
@@ -482,11 +482,11 @@ int main() {
 			switch (opcionReporta) {
 			case 1:
 				cout << "Reporte de contratos con sus empleados" << endl;
-				cout << listaEmpleado.mostrarContratos() << endl;
+				cout << listaEmpleado->mostrarContratos() << endl;
 				break;
 			case 2:
 				cout << "Reporte de aeronaves con su tripulacion" << endl;
-				cout<<listaEmpleado.reporteAeronavesTripulacion();
+				cout<<listaEmpleado->reporteAeronavesTripulacion();
 				break;
 			case 3:
 				cout << "Reporte de todas las aeronaves" << endl;
@@ -494,11 +494,11 @@ int main() {
 				break;
 			case 4:
 				cout << "Reporte de todos los empleados" << endl;
-				cout<<listaEmpleado.toString();
+				cout<<listaEmpleado->toString();
 				break;
 			case 5:
 				cout << "Reporte de los pilotos para los aviones de carga" << endl;
-				cout<<listaEmpleado.reportedePilotosParaAvionesdeCarga();
+				cout<<listaEmpleado->reportedePilotosParaAvionesdeCarga();
 				break;
 			case 6:
 				cout << "Reporte de todos los aviones que tienen mas de 20 anios" << endl;
@@ -506,19 +506,19 @@ int main() {
 				break;
 			case 7:
 				cout << "Reporte de todos los contrato de servicios profesionales" << endl;
-				cout<<listaEmpleado.reporteDeTodosLosContratosdeServicioProfesionales();
+				cout<<listaEmpleado->reporteDeTodosLosContratosdeServicioProfesionales();
 				break;
 			case 8:
 				cout << "Reporte de todos los contratos a plazo fijo" << endl;
-				cout<<listaEmpleado.reporteDeTodosLosContratosdePlazoFijo();
+				cout<<listaEmpleado->reporteDeTodosLosContratosdePlazoFijo();
 				break;
 			case 9:
 				cout << "Reporte de todos los contratos a tiempo indefinido" << endl;
-				cout<<listaEmpleado.reporteATodosLosContratosaTiempoIndefinido();
+				cout<<listaEmpleado->reporteATodosLosContratosaTiempoIndefinido();
 				break;
 			case 10:
 				cout << "Reporte de los contratos de plazo fijo que ya excedieron los 2 anios" << endl;
-				cout<<listaEmpleado.reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
+				cout<<listaEmpleado->reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
 				break;
 			case 11:
 				cout << "Reporte del avion de carga con mayor area" << endl;
@@ -540,12 +540,12 @@ int main() {
 			case 1:
 				cout << "Ingrese la cedula del empleado" << endl;
 				 cin>>ced;
-				cout<<listaEmpleado.consultadetripulantepormediodecedulaydevuelvesuavion(ced);
+				cout<<listaEmpleado->consultadetripulantepormediodecedulaydevuelvesuavion(ced);
 				break;
 			case 2:
 				cout << "Ingrese el numero de contrato" << endl;
 				cin >> codCon;
-				cout<<listaEmpleado.consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon);
+				cout<<listaEmpleado->consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon);
 				break;
 			case 3:
 				cout << "Ingrese el numero de placa" << endl;
@@ -583,6 +583,8 @@ int main() {
 	delete contrato;
 	delete contrato2;
 	delete contrato3;
+	delete listaEmpleado;
+	delete listaContrato;
 
 
 	return 0;

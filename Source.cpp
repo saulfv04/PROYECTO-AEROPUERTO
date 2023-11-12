@@ -107,7 +107,7 @@ int main() {
 	int dia, mes, anio;
 
 	while (true) {
-		cout << "1- Ingresar Empleados y Aviones\n" << endl;
+		cout << "1- Ingresar Aeronaves, Contratos, Empleados\n" << endl;
 		cout << "2- Mantenimiento\n" << endl;
 		cout << "3- Reportes\n" << endl;
 		cout << "4- Consultas\n" << endl;

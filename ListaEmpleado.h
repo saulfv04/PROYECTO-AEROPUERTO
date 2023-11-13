@@ -10,6 +10,10 @@
 #include "aComerciales.h"
 #include "aCivil.h"
 #include "ContratoPlazoFijo.h"
+//Universidad Nacional de Costa Rica
+//Proyecto programado del curso Programacion I
+//Estudiante: Saúl Antonio Francis Vargas, 1-1923-0466
+//Profesora: Marianela Solis Orias
 #include "ContratoTiempoIndefinido.h"
 #include "ContratoServicioProfesionales.h"
 #include "Administrativos.h"

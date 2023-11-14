@@ -53,7 +53,7 @@ bool aComerciales::getDoblePiso()
 string aComerciales::toString()
 {
 	stringstream s;
-	
+	s << "---------AVION COMERCIAL----------" << endl << endl;
 	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
 	
 	s << " Distacia Recorrida: " << distanciaRecorrida << endl;

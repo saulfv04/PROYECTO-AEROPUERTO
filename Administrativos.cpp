@@ -19,6 +19,8 @@ string Administrativos::getTitulo()
 string Administrativos::toString()
 {
 	stringstream s;
+
+	s << "---------ADMINISTRATIVO----------" << endl << endl;
 	s << " CEDULA: " << cedula << endl;
 
 	s << " NOMBRE: " << nombre << endl;

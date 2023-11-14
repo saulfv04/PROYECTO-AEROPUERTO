@@ -51,8 +51,17 @@ avion* ContenedorAviones::getAvion(int i){
 	return vec[i];
 }
 
-void ContenedorAviones::eliminarAvion(int i){
-	delete vec[i];
+bool ContenedorAviones::eliminarAvion(int i){
+	if (i <= 15) {
+		if (vec[i] != NULL) {
+			delete vec[i];
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	return false;
 }
 
 string ContenedorAviones::reporteDeAvionesConmasde20anios(){
@@ -66,19 +75,20 @@ string ContenedorAviones::reporteDeAvionesConmasde20anios(){
 	}
 	return s.str();
 }
-aCarga* ContenedorAviones::getAvionCarga(){
+string ContenedorAviones::getAvionCarga(){
 	aCarga* avionMayorArea = nullptr;
     double mayorArea = 0;
-
+	double aux = 0;
     for (int i = 0; i < cant; i++) {
         aCarga* ac = dynamic_cast<aCarga*>(vec[i]);
-        if (ac != nullptr && ac->darCapacidad() > mayorArea) {  
+		aux = ac->getAlturaPuerta()* ac->getAnchuraPuerta();
+        if (ac != nullptr && aux > mayorArea) {  
             avionMayorArea = ac;
-            mayorArea = ac->darCapacidad();
+            mayorArea = aux;
         }
     }
 
-    return avionMayorArea;
+	return avionMayorArea->toString();
 }
 
 string ContenedorAviones::informaciondelaaeronavedeAviacioncivilconsuplaca(int p){

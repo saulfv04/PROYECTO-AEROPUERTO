@@ -21,6 +21,7 @@ string Miscelaneos::getGradoEscolar()
 string Miscelaneos::toString()
 {
 	stringstream s;
+	s << "---------MISCELANEOS----------" << endl << endl;
 	s << " CEDULA: " << cedula << endl;
 
 	s << " NOMBRE: " << nombre << endl;

@@ -18,7 +18,7 @@ string Azafata::getTelefono()
 string Azafata::toString()
 {
 	stringstream s;
-
+	s << "---------AZAFATA----------" << endl << endl;
 	s << " CEDULA: " << cedula << endl;
 
 	s << " NOMBRE: " << nombre << endl;

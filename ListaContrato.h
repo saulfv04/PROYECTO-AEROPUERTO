@@ -4,6 +4,9 @@
 //Profesora: Marianela Solis Orias
 #pragma once
 #include "NodoContrato.h"
+#include "ContratoServicioProfesionales.h"
+#include "ContratoPlazoFijo.h"
+#include "ContratoTiempoIndefinido.h"
 class ListaContrato
 {
 	private:
@@ -19,9 +22,11 @@ class ListaContrato
 		void eliminarContrato(int);
 		Contrato* buscarContrato(int);
 		string toString();
-
-
-
+		string reporteDeLosContratosServiciosProfesionales();
+		string reporteDeTodosLosContratosdePlazoFijo();
+		string reporteATodosLosContratosaTiempoIndefinido();
+		string reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
+		int consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(int);
 
 
 };

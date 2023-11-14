@@ -44,7 +44,7 @@ string aMilitar::getcategoriaAv()
 string aMilitar::toString()
 {
 	stringstream s;
-
+	s << "---------AVION MILITAR----------" << endl << endl;
 	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
 	s << " Distacia Recorrida: " << distanciaRecorrida << endl;
 	s << "Velocidad Maxima: " << velocidadMax << endl;

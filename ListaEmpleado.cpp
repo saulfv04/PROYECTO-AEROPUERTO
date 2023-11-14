@@ -158,30 +158,31 @@ string ListaEmpleado::toString()
     return s.str();
 }
 
-void ListaEmpleado::eliminarEmpleado(string id){
-    NodoEmpleado* actual = primero;
-    NodoEmpleado* previo = NULL;
-    while(actual != NULL){
-        if(actual->getEmpleado()->getCedula() == id){
-            if(previo == NULL){
-                primero = actual->getSig();
-            }else{
-                previo->setSig(actual->getSig());
-            }
-            NodoEmpleado* temp = actual;
-            actual = actual->getSig();
-            delete temp->getEmpleado()->getContrato();
-            delete temp;
-            cout << "Eliminado Correctamente";
-            break;
-        }else{
-            previo = actual;
-            actual = actual->getSig();
-        }
+bool ListaEmpleado::eliminarEmpleado(int id){
+    NodoEmpleado* Panterior = NULL;
+    actual = primero;
+
+    if (primero == NULL) {
+        return false;
+    }
+    if (actual != NULL && actual->getEmpleado()->getContrato()->getCodContrato() == id) {
+        delete actual;
+        return true;
+    }
+
+    while (actual != NULL) {
+        Panterior = actual;
+        actual->getSig();
     }
     if (actual == NULL) {
-        cout << "No existe empleado con ese id" << endl;
+        return false;
     }
+    else {
+        Panterior->setSig(actual->getSig());
+        delete actual;
+        return true;
+    }
+    return false;
 }
 
 string ListaEmpleado::mostrarContratos(){
@@ -240,113 +241,7 @@ string ListaEmpleado::reportedePilotosParaAvionesdeCarga(){
 }
 
 
-string ListaEmpleado::reporteDeTodosLosContratosdeServicioProfesionales(){
-    actual = primero;
-    stringstream s;
-    while(actual != NULL){
-        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  
-                
-            if (empleado != NULL) {
-                if (ContratoServicioProfesionales* csp = dynamic_cast<ContratoServicioProfesionales*>(empleado->getContrato())) {
-                    s<< actual->getEmpleado()->toString();
-                }
-            } else {
-                s << "No hay contratos de servicio profesional\n";
-            }
-            actual = actual->getSig();
-    }
-    return s.str();
-}
-
-string ListaEmpleado::reporteDeTodosLosContratosdePlazoFijo(){
-    actual = primero;
-    stringstream s;
-    while(actual != NULL){
-        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  
-                
-            if (empleado != NULL) {
-                if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
-                    s<< actual->getEmpleado()->toString();
-                    s<< cpf->toString();
-                }
-            } else {
-                s << "No hay contratos de plazo fijo\n";
-            }
-            actual = actual->getSig();
-    }
-    return s.str();
-}
-
-string ListaEmpleado::reporteATodosLosContratosaTiempoIndefinido(){
-    actual = primero;
-    stringstream s;
-    while(actual != NULL){
-        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  
-                
-            if (empleado != NULL) {
-                if (ContratoTiempoIndefinido* cti = dynamic_cast<ContratoTiempoIndefinido*>(empleado->getContrato())) {
-                    s<< actual->getEmpleado()->toString();
-                }
-            } else {
-                s << "No hay contratos a tiempo indefinido\n";
-            }
-            actual = actual->getSig();
-    }
-    return s.str();
-}
-
-string ListaEmpleado::reportedeTripulacionesdeLosAvionesComerciales() {
-    actual = primero;
-    stringstream s;
-    while (actual != NULL) {
-        Tripulantes* tripulante = dynamic_cast<Tripulantes*>(actual->getEmpleado());
-
-        if (tripulante != NULL) {
-            if (Azafata* azafata = dynamic_cast<Azafata*>(tripulante)) {
-                if (aComerciales* ac = dynamic_cast<aComerciales*>(azafata->getAvion())) {
-                    s << actual->getEmpleado()->toString();
-                }
-            }
-            if (Piloto* piloto = dynamic_cast<Piloto*>(tripulante)) {
-                if (aComerciales* ac = dynamic_cast<aComerciales*>(piloto->getAvion())) {
-                    s << actual->getEmpleado()->toString();
-                }
-            }
-            if (Copiloto* copiloto = dynamic_cast<Copiloto*>(tripulante)) {
-                if (aComerciales* ac = dynamic_cast<aComerciales*>(copiloto->getAvion())) {
-                    s << actual->getEmpleado()->toString();
-                }
-            }
-            else {
-                s << "No tripulantes con aviones comerciales\n";
-            }
-            actual = actual->getSig();
-        }
-        return s.str();
-    }
-}
-
-string ListaEmpleado::reportedeloscontratosplazofijoqueyaexcedieronlos2anios(){
-    actual = primero;
-    stringstream s;
-    while(actual != NULL){
-        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  
-                
-            if (empleado != NULL) {
-                if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
-                    if (cpf->getDuracion() > 2) {
-                        s<< actual->getEmpleado()->toString();
-                    }
-                }
-            } else {
-                s << "No hay contratos de plazo fijo que excedan los 2 anios\n";
-            }
-            actual = actual->getSig();
-    }
-    return s.str();
-}
-
-string ListaEmpleado::consultadetripulantepormediodecedulaydevuelvesuavion(string c){
+int ListaEmpleado::consultadetripulantepormediodecedulaydevuelvesuavion(string c){
     actual = primero;
     stringstream s;
     while(actual != NULL){
@@ -354,42 +249,24 @@ string ListaEmpleado::consultadetripulantepormediodecedulaydevuelvesuavion(strin
                 
             if (tripulante != NULL) {
                 if (tripulante->getCedula() == c) {
-                    s<< actual->getEmpleado()->toString();
-                    s<< tripulante->getAvion()->toString();
-                }
+                    if (aMilitar* aM = dynamic_cast<aMilitar*>(tripulante->getAvion())) {
+                        return 1;
+                    }
+                    if (aCarga* aC = dynamic_cast<aCarga*>(tripulante->getAvion())) {
+                        if (aComerciales* aCo = dynamic_cast<aComerciales*>(aC)){
+                            return 2;
+                        }
+                        if (aCarga* aCa = dynamic_cast<aCarga*>(aC)) {
+                            return 3;
+                        }
+                    }
+               }
             } else {
                 s << "No hay tripulantes con esa cedula\n";
             }
             actual = actual->getSig();
     }
-    return s.str();
+    return 0;
 }
 
-string ListaEmpleado::consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(int nC){
-    actual = primero;
-    stringstream s;
-    while(actual != NULL){
-        Empleado* empleado = dynamic_cast<Empleado*>(actual->getEmpleado());  
-                
-            if (empleado != NULL) {
-                if (empleado->getContrato()->getCodContrato() == nC) {
-                    if (ContratoPlazoFijo* cpf = dynamic_cast<ContratoPlazoFijo*>(empleado->getContrato())) {
-                        s<< actual->getEmpleado()->toString();
-                        s<< cpf->toString();
-                    }
-                    if (ContratoTiempoIndefinido* cti = dynamic_cast<ContratoTiempoIndefinido*>(empleado->getContrato())) {
-                        s<< actual->getEmpleado()->toString();
-                        s<< cti->toString();
-                    }
-                    if (ContratoServicioProfesionales* csp = dynamic_cast<ContratoServicioProfesionales*>(empleado->getContrato())) {
-                        s<< actual->getEmpleado()->toString();
-                        s<< csp->toString();
-                    }
-                }
-            } else {
-                s << "No hay contratos con ese numero\n";
-            }
-            actual = actual->getSig();
-    }
-    return s.str();
-}
+

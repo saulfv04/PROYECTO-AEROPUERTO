@@ -18,7 +18,7 @@ string Copiloto::getNacionalidad()
 string Copiloto::toString()
 {
 	stringstream s;
-
+	s << "---------COPILOTO----------" << endl << endl;
 	s << " CEDULA: " << cedula << endl;
 
 	s << " NOMBRE: " << nombre << endl;

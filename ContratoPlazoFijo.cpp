@@ -39,7 +39,7 @@ int ContratoPlazoFijo::getDuracion()
 string ContratoPlazoFijo::toString()
 {
 	stringstream s;
-
+	s << "---------CONTRATO PLAZO FIJO----------" << endl << endl;
 	s << "Codigo del Contrato: " << codContrato << endl;
 	s << " Descuento por el Puesto: " << descPuesto << endl;
 	s << " Salario: " << salario << endl;

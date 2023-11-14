@@ -20,9 +20,9 @@ class ContenedorAviones
 		int getCant();
 		avion* getAvion(int);
 
-		void eliminarAvion(int);
+		bool eliminarAvion(int);
 		string reporteDeAvionesConmasde20anios();
-		aCarga* getAvionCarga();
+		string getAvionCarga();
 		string informaciondelaaeronavedeAviacioncivilconsuplaca(int);
 };
 

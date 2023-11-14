@@ -32,18 +32,12 @@ class ListaEmpleado
 		~ListaEmpleado();
 		void insertarEmpleado(Empleado*);
 		void revisarContratos();
-		void eliminarEmpleado(string);
+		bool eliminarEmpleado(int);
 		string toString();
 		string mostrarContratos();
 		string reporteAeronavesTripulacion();
 		string reportedePilotosParaAvionesdeCarga();
-		string reporteDeTodosLosContratosdeServicioProfesionales();
-		string reporteDeTodosLosContratosdePlazoFijo();
-		string reporteATodosLosContratosaTiempoIndefinido();
-		string reportedeTripulacionesdeLosAvionesComerciales();
-		string reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
-		string consultadetripulantepormediodecedulaydevuelvesuavion(string);
-		string consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(int);
+		int consultadetripulantepormediodecedulaydevuelvesuavion(string);
 
 };
 

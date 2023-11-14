@@ -98,7 +98,7 @@ int main() {
 
 
 	//Mantenimiento
-	string idEm;
+	int idEm;
 	int idAv;
 
 
@@ -178,7 +178,7 @@ int main() {
 						cout << "Puerta lateral (1 para si, 0 para no): ";
 						cin >> puerLa;
 						cout << "Categoria: ";
-						getline(cin, cat);
+						cin>>cat;
 						aeronave = new aCarga(fCreacionCarga, diRE, nP, alPuer, anPuer, esc, puerLa, cat);
 						aCar = dynamic_cast<aCarga*>(aeronave);
 						aCar->setTipo(cat);
@@ -452,16 +452,24 @@ int main() {
 			cin >> opcionEliminar;
 			switch (opcionEliminar) {
 			case 1:
-				// Eliminar un empleado
 				cout << "Ingrese el ID del empleado a eliminar: ";
 				cin >> idEm;
-				listaEmpleado->eliminarEmpleado(idEm);
+				if (listaEmpleado->eliminarEmpleado(idEm) != false) {
+					cout << "Se elimino correctamente" << endl;
+				}
+				else {
+					cout << "No existe empleado con ese numero de contrato" << endl;
+				}
 				break;
 			case 2:
-				// Eliminar un avion
 				cout << "Ingrese el ID del avion a eliminar: ";
 				cin >> idAv;
-				ContenedorAviones.eliminarAvion(idAv);
+				if (ContenedorAviones.eliminarAvion(idAv - 1) != false) {
+					cout << "Se elimino el avion correctamente" << endl;
+				}
+				else {
+					cout << "No existe avion con ese id" << endl;
+				}
 				break;
 			default:
 				cout << "Opcion invalida. Por favor, intente de nuevo.\n";
@@ -510,19 +518,19 @@ int main() {
 				break;
 			case 7:
 				cout << "Reporte de todos los contrato de servicios profesionales" << endl;
-				cout<<listaEmpleado->reporteDeTodosLosContratosdeServicioProfesionales();
+				cout<<listaContrato->reporteDeLosContratosServiciosProfesionales();
 				break;
 			case 8:
 				cout << "Reporte de todos los contratos a plazo fijo" << endl;
-				cout<<listaEmpleado->reporteDeTodosLosContratosdePlazoFijo();
+				cout<<listaContrato->reporteDeTodosLosContratosdePlazoFijo();
 				break;
 			case 9:
 				cout << "Reporte de todos los contratos a tiempo indefinido" << endl;
-				cout<<listaEmpleado->reporteATodosLosContratosaTiempoIndefinido();
+				cout<<listaContrato->reporteATodosLosContratosaTiempoIndefinido();
 				break;
 			case 10:
 				cout << "Reporte de los contratos de plazo fijo que ya excedieron los 2 anios" << endl;
-				cout<<listaEmpleado->reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
+				cout<<listaContrato->reportedeloscontratosplazofijoqueyaexcedieronlos2anios();
 				break;
 			case 11:
 				cout << "Reporte del avion de carga con mayor area" << endl;
@@ -543,13 +551,36 @@ int main() {
 			switch (opcionConsulta) {
 			case 1:
 				cout << "Ingrese la cedula del empleado" << endl;
-				 cin>>ced;
-				cout<<listaEmpleado->consultadetripulantepormediodecedulaydevuelvesuavion(ced);
+				cin>>ced;
+				if (listaEmpleado->consultadetripulantepormediodecedulaydevuelvesuavion(ced) == 1) {
+					cout << "Avion tipo Militar" << endl;
+				}
+				else if (listaEmpleado->consultadetripulantepormediodecedulaydevuelvesuavion(ced) == 2) {
+					cout << "Avion tipo Comercial" << endl;
+				}
+				else if (listaEmpleado->consultadetripulantepormediodecedulaydevuelvesuavion(ced) == 3) {
+					cout << "Avion tipo Carga" << endl;
+				}
+				else {
+					cout << "No hay tripulante con ese numero de cedula" << endl;
+				}
 				break;
 			case 2:
 				cout << "Ingrese el numero de contrato" << endl;
 				cin >> codCon;
-				cout<<listaEmpleado->consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon);
+				if (listaContrato->consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon) == 1) {
+					cout << "El contrato es de tipo: Plazo Fijo" << endl;
+				}
+				else if (listaContrato->consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon) == 2) {
+					cout << "El contrato es de tipo: Tiempo Indefinido" << endl;
+				}
+				else if (listaContrato->consultaporuncontratoconayudadelnumerodecontratoyeltipodecontratoquepertenece(codCon) == 3)
+				{
+					cout << "El contrato es de tipo: Tiempo Indefinido" << endl;
+				}
+				else {
+					cout << "No existe ningun contrato con ese numero de contrato" << endl;
+				}
 				break;
 			case 3:
 				cout << "Ingrese el numero de placa" << endl;

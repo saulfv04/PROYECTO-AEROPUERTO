@@ -17,7 +17,7 @@ int Piloto::getAniosExp()
 string Piloto::toString()
 {
 	stringstream s;
-
+	s << "---------PILOTO----------" << endl << endl;
 	s << " CEDULA: " << cedula << endl;
 
 	s << " NOMBRE: " << nombre << endl;

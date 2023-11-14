@@ -75,7 +75,7 @@ string aCarga::toString()
 {
 	stringstream s;
 
-
+	s << "---------AVION DE CARGA----------" << endl << endl;
 	s << "Fecha de Creacion: " << fechaCreacion->toString() << endl;
 	s << " Distacia Recorrida: " << distanciaRecorrida << endl;
 

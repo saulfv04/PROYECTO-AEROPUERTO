@@ -23,7 +23,7 @@ int ContratoServicioProfesionales::getHorarioLaboral()
 string ContratoServicioProfesionales::toString()
 {
 	stringstream s;
-
+	s << "---------CONTRATO DE SERVICIOS PROFESIONALES----------" << endl << endl;
 	s << "Codigo del Contrato: " << codContrato << endl;
 	s << " Descuento por el Puesto: " << descPuesto << endl;
 	s << " Salario: " << salario << endl;
